@@ -1,0 +1,11 @@
+<a href="#" class="list-group-item clearfix"
+[routerLink]="[todo?.id]"
+[routerLinkActive]="['active']"
+>
+  <section class="group-item-layout" >
+    <div class="general-padding" >
+      <h3 class="list-group-item-heading">{{todo.name}}</h3>
+      <p>{{todo.type}}</p>
+    </div>
+</section>
+</a>

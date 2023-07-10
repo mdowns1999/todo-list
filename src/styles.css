@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Open+Sans&display=swap');
+
+/* Color Pallet
+https://coolors.co/palette/ffb5a7-fcd5ce-f8edeb-f9dcc4-fec89a */
+
+body{
+    background-color: #f9dcc4;
+    font-family: 'Noto Serif', serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+    padding:0px;
+    margin: 0px;
+}
+
+p{
+    font-size: 18px;
+}
+
+.todo-list-box, .todo-detail-box{
+    background-color:#f8edeb;
+    padding:10px;
+}
+
+.todo-list-heading{
+    background-color: rgb(255, 249, 249);
+}
+
+.todo-list-heading a{
+    margin-right: 10px;
+}
+
+.todo-list-heading span{
+    padding:10px;
+    font-size: 20px;
+}
+
+.btn-margin-left-right a{
+margin: 10px 5px;
+}
+
+/************General Form Styles*********/
