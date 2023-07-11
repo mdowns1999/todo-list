@@ -30,15 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
     CompletedComponent,
     CompletedListComponent,
     CompletedItemComponent,
-    CompletedDetailComponent
+    CompletedDetailComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

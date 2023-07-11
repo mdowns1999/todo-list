@@ -1,5 +1,5 @@
-.completed-btn-box{
-    display:flex;
-    justify-content: space-evenly;
-    padding:10px;
+.completed-btn-box {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
 }

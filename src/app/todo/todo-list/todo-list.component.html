@@ -1,23 +1,25 @@
 <div class="panel panel default todo-list-box">
-    <div class="panel-heading todo-list-heading">
-        <div class="row pad-left-right">
-            <span>To-Do List Items:</span>
-            <a class="btn btn-success pull-right"
-            [routerLink]="['new']">
-                Add Item</a>
-        </div>
-        <div class="row completed-btn-box">
-            <button class="btn btn-primary" (click)="filterList(false)">Uncompleted</button>
-            <button class="btn btn-primary" (click)="filterList(true)">Completed</button>
-        </div>
+  <div class="panel-heading todo-list-heading">
+    <div class="row pad-left-right">
+      <span>To-Do List Items:</span>
+      <a class="btn btn-success pull-right" [routerLink]="['new']"> Add Item</a>
     </div>
+    <div class="row completed-btn-box">
+      <button class="btn btn-primary" (click)="filterList(false)">
+        Uncompleted
+      </button>
+      <button class="btn btn-primary" (click)="filterList(true)">
+        Completed
+      </button>
+    </div>
+  </div>
 
-    <div class="panel-body">
-        <div class="center-panel">
-            <app-todo-item *ngFor="let item of statusList"
-            [todo]="item"></app-todo-item>
-            <!-- <app-todo-item *ngFor="let item of TodoList"
-            [todo]="item"></app-todo-item> -->
-        </div>
+  <div class="panel-body">
+    <div class="center-panel">
+      <app-todo-item
+        *ngFor="let item of statusList"
+        [todo]="item"
+      ></app-todo-item>
     </div>
+  </div>
 </div>

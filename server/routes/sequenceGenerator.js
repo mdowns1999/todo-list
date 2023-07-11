@@ -1,4 +1,4 @@
-var Sequence = require('../models/sequence');
+var Sequence = require("../models/sequence");
 
 var maxToDoId;
 var sequenceId = null;
@@ -7,24 +7,19 @@ function SequenceGenerator() {
   Sequence.findOne()
     .exec()
     .then((sequence) => {
-
       sequenceId = sequence._id;
-      maxToDoId= sequence.maxToDoId;
+      maxToDoId = sequence.maxToDoId;
     })
     .catch((err) => {
-    //   return res.status(500).json({
-    //     title: "An error occurred",
-    //     error: err,
-    //   });
-    console.log(err)
+      console.log(err);
     });
 }
-SequenceGenerator.prototype.nextId =  function (collectionType) {
+SequenceGenerator.prototype.nextId = function (collectionType) {
   var updateObject = {};
   var nextId;
   switch (collectionType) {
     case "todos":
-    maxToDoId++;
+      maxToDoId++;
       updateObject = { maxToDoId: maxToDoId };
       nextId = maxToDoId;
       break;
@@ -32,11 +27,11 @@ SequenceGenerator.prototype.nextId =  function (collectionType) {
       return -1;
   }
   Sequence.updateOne({ _id: sequenceId }, { $set: updateObject })
-  .then(result => console.log(result))
-  .catch((err) => {
-        console.log("nextId error = ", err);
-        return null;
-  });
+    .then((result) => console.log(result))
+    .catch((err) => {
+      console.log("nextId error = ", err);
+      return null;
+    });
   return nextId;
 };
 module.exports = new SequenceGenerator();

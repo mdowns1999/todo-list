@@ -6,72 +6,65 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 @Component({
   selector: 'app-todo-detail',
   templateUrl: './todo-detail.component.html',
-  styleUrls: ['./todo-detail.component.css']
+  styleUrls: ['./todo-detail.component.css'],
 })
-export class TodoDetailComponent implements OnInit {
 
+/********************************************************
+ * TODO DETAIL COMPONENT
+ **********************************************************/
+export class TodoDetailComponent implements OnInit {
+  //Member Variables
   todo: Todo;
   id: string;
 
-  constructor(private todoService: TodoService, 
+  /********************************************************
+   * CONSTRUCTOR
+   **********************************************************/
+  constructor(
+    private todoService: TodoService,
     private route: ActivatedRoute,
-    private router: Router){}
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.id = params['id'];
-        this.todo = this.todoService.getTodoItem(this.id);
-      }
-    )
+    this.route.params.subscribe((params: Params) => {
+      this.id = params['id'];
+      this.todo = this.todoService.getTodoItem(this.id);
+    });
   }
 
-  onDelete(){
+  /********************************************************
+   * ON DELETE
+   * This will send the item to the service to be deleted and
+   * navigate back to the mian component.
+   **********************************************************/
+  onDelete() {
     this.todoService.deleteTodoItem(this.todo);
     this.router.navigateByUrl('/todoList');
   }
 
-  updateStatus(){
+  /********************************************************
+   * UPDATE STATUS
+   * This Method will update the status of the To-Do Item
+   **********************************************************/
+  updateStatus() {
     let status;
-    if(this.todo.completed === false){
+    if (this.todo.completed === false) {
       status = true;
-    }
-    else{
+    } else {
       status = false;
     }
 
-    let newItem = new Todo(this.todo.id,
+    let newItem = new Todo(
+      this.todo.id,
       this.todo.name,
       this.todo.type,
       this.todo.description,
-      this.todo.completed = status
-)
+      (this.todo.completed = status)
+    );
 
+    this.todoService.updateTodoitem(this.todo, newItem);
 
-  this.todoService.updateTodoitem(this.todo, newItem);
-
-  this.router.navigate(['/todoList']);
-
+    this.router.navigate(['/todoList']);
   }
-
 }
-
-// let value = form.value // get values from form’s fields
-// let newItem = new Todo(value.id,
-//   value.name,
-//   value.type,
-//   value.description,
-//   value.completed
-//   )
-
-//   newItem.completed = false;
-
-// if (this.editMode){
-//   this.todoService.updateTodoitem(this.originalItem, newItem);
-// }
- 
-// else {
-//   this.todoService.addTodoItem(newItem);
-// }
-
-// this.router.navigate(['/todoList']);

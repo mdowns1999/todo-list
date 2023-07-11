@@ -1,16 +1,15 @@
-#checkMark{
-    padding:100px;
+#checkMark {
+  padding: 100px;
 }
-.group-item-layout{
-    display: flex;
-}
-
-.checkmark{
-    align-self: center;
+.group-item-layout {
+  display: flex;
 }
 
+.checkmark {
+  align-self: center;
+}
 
-.general-padding{
-    padding: 5px;
-    margin-left: 10px;
+.general-padding {
+  padding: 5px;
+  margin-left: 10px;
 }

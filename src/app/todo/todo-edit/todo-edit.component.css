@@ -1,8 +1,9 @@
-textarea{
-    height:150px;
+textarea {
+  height: 150px;
 }
 
-textarea, input, option{
-    font-size: 16px;
+textarea,
+input,
+option {
+  font-size: 16px;
 }
-
