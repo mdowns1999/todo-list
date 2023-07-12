@@ -4,7 +4,7 @@ Welcome to my To-Do List Angular App! This application is a simple app that allo
 
 
 * [App Demo Video](http://youtu.be/rSvn1qME2ho?hd=1)
-* [Live Deployed Site](https://mdowns1999.github.io/todo-list/)
+* [See Live Deployed Site](https://mdowns1999.github.io/todo-list/)
 
 # Development Environment
 
