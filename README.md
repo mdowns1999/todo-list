@@ -1,10 +1,10 @@
 # Overview
 
-Welcome to my To-Do List Angular App! This application is a simple app that allowed me to practice building a full-stack Angular app. For the front-end portion I used various parts of Angular like routing, services, binding, and http requests.  I programed this portion in Typescript, HTML, and CSS.  For the backend, I used Node JS, Express, and MongoDB.  For this portion I simply just used Javascript and Node. I also used Bootstrap 3 for this project. I did this to experiment with bootstrap and I also wanted to focus more on using Angular and the backend resources.
+Welcome to my To-Do List Angular App! This application is a simple app that allowed me to practice building a full-stack Angular app. For the front-end portion, I used various parts of Angular like routing, services, binding, and HTTP requests.  I programmed this portion in Typescript, HTML, and CSS.  For the backend, I used Node JS, Express, and MongoDB.  For this portion, I simply just used Javascript and Node. I also used Bootstrap 3 for this project. I did this to experiment with bootstrap and I also wanted to focus more on using Angular and the backend resources.
 
 
-[App Demo Video](http://youtu.be/rSvn1qME2ho?hd=1)
-[Live Deployed Site](https://github.com/mdowns1999/todo-list)
+* [App Demo Video](http://youtu.be/rSvn1qME2ho?hd=1)
+* [Live Deployed Site](https://github.com/mdowns1999/todo-list)
 
 # Development Environment
 
