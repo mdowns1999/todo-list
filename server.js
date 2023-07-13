@@ -14,14 +14,13 @@ dotenv.config();
 // establish a connection to the mongo database mongodb://localhost:27017
 //.connect("mongodb://127.0.0.1:27017/todoDB", { useNewUrlParser: true })
 mongoose
- .connect("mongodb://127.0.0.1:27017/todoDB", { useNewUrlParser: true })
-  //.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+//  .connect("mongodb://127.0.0.1:27017/todoDB", { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("Connection failed: " + err));
   
 
 // import the routing file to handle the default (index) route
-//var index = require('./server/routes/app');
 var index = require('./server/routes/app');
 const todoRoutes = require('./server/routes/todos');
 
@@ -52,7 +51,6 @@ app.use((req, res, next) => {
 
 // Tell express to use the specified director as the
 // root directory for your web site
-//app.use(express.static(path.join(__dirname, 'dist/cms')));
 app.use(express.static(path.join(__dirname, 'dist/todo-list')));
 
 // Tell express to map the default route ('/') to the index route
@@ -74,5 +72,5 @@ const server = http.createServer(app);
 
 // Tell the server to start listening on the provided port
 server.listen(port, function() {
-  console.log('API running on localhost: ' + port)
+  console.log('API running on port: ' + port)
 });

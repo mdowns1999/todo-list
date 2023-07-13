@@ -36,7 +36,7 @@ export class TodoService {
     console.log('MONGO CONTACTS');
     this.http
       .get<{ ToDoItems: Todo[]; message: string }>(
-        'http://localhost:3000/todos'
+        'https://todo-list-app-l8kj.onrender.com/todos'
       )
       .subscribe(
         // success method
