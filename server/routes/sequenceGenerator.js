@@ -1,7 +1,7 @@
 var Sequence = require("../models/sequence");
 
 var maxToDoId;
-var sequenceId = null;
+var sequenceId = '';
 
 function SequenceGenerator() {
   Sequence.findOne()
