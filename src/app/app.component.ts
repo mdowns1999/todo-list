@@ -8,3 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'todo-list';
 }
+
+// ng build --output-path docs --base-href /todo-list/
+//ng serve
