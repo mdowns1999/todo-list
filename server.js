@@ -51,7 +51,8 @@ app.use((req, res, next) => {
 
 // Tell express to use the specified director as the
 // root directory for your web site
-app.use(express.static(path.join(__dirname, 'dist/todo-list')));
+// app.use(express.static(path.join(__dirname, 'dist/todo-list')));
+app.use(express.static(path.join(__dirname, 'docs')));
 
 // Tell express to map the default route ('/') to the index route
 app.use('/', index);
@@ -60,7 +61,8 @@ app.use('/todos', todoRoutes);
 // Tell express to map all other non-defined routes back to the index page
 app.get('*', (req, res) => {
   //res.sendFile(path.join(__dirname, 'dist/cms/index.html'));
-  res.sendFile(path.join(__dirname, 'dist/todo-list/index.html'));
+  // res.sendFile(path.join(__dirname, 'dist/todo-list/index.html'));
+  res.sendFile(path.join(__dirname, 'docs/index.html'));
 });
 
 // Define the port address and tell express to use this port
