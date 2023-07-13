@@ -1,13 +1,13 @@
 var Sequence = require("../models/sequence");
 
 var maxToDoId;
-var sequenceId = '';
+var sequenceId = null;
 
 function SequenceGenerator() {
   Sequence.findOne()
     .exec()
     .then((sequence) => {
-      sequenceId = sequence._id;
+      sequenceId = sequence.id;
       maxToDoId = sequence.maxToDoId;
     })
     .catch((err) => {
@@ -26,7 +26,7 @@ SequenceGenerator.prototype.nextId = function (collectionType) {
     default:
       return -1;
   }
-  Sequence.updateOne({ _id: sequenceId }, { $set: updateObject })
+  Sequence.updateOne({ id: sequenceId }, { $set: updateObject })
     .then((result) => console.log(result))
     .catch((err) => {
       console.log("nextId error = ", err);

@@ -41,6 +41,7 @@ export class TodoService {
       .subscribe(
         // success method
         (response) => {
+          console.log(response.ToDoItems)
           this.TodoList = response.ToDoItems.sort();
           this.maxToDoId = this.getMaxId();
           this.todoListChangedEvent.next(this.TodoList.slice());

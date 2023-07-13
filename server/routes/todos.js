@@ -8,6 +8,7 @@ const sequenceGenerator = require("./sequenceGenerator");
 router.get("/", (req, res, next) => {
   ToDo.find()
     .then((ToDoItems) => {
+      console.log("HELLO")
       res.status(200).json({
         message: "Got To-Do Items Successfully!",
         ToDoItems: ToDoItems,
@@ -25,8 +26,6 @@ router.get("/", (req, res, next) => {
 router.post("/", (req, res, next) => {
   const maxToDoId = sequenceGenerator.nextId("todos");
 
-  console.log("MADE IT PAST GENERTATOR");
-
   const todoItem = new ToDo({
     id: maxToDoId,
     name: req.body.name,
@@ -35,7 +34,6 @@ router.post("/", (req, res, next) => {
     completed: false,
   });
 
-  console.log("ABOUT TO SAVE");
   todoItem
     .save()
     .then((createdItem) => {
