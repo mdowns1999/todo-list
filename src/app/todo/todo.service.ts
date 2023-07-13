@@ -116,7 +116,7 @@ export class TodoService {
 //http://localhost:3000/todos/
     // update database
     this.http
-      .put('https://todo-list-app-l8kj.onrender.com/todos' + originalTodoItem.id, newTodoItem, {
+      .put('https://todo-list-app-l8kj.onrender.com/todos/' + originalTodoItem.id, newTodoItem, {
         headers: headers,
       })
       .subscribe((response: Response) => {
@@ -145,7 +145,7 @@ export class TodoService {
     }
     // delete from database
     this.http
-      .delete('https://todo-list-app-l8kj.onrender.com/todos' + todoItem.id)
+      .delete('https://todo-list-app-l8kj.onrender.com/todos/' + todoItem.id)
       .subscribe((response: Response) => {
         this.TodoList.splice(pos, 1);
         this.sortAndSend();
