@@ -80,7 +80,7 @@ export class TodoService {
     // add to database
     this.http
       .post<{ message: string; todo: Todo }>(
-        'http://localhost:3000/todos',
+        'https://todo-list-app-l8kj.onrender.com/todos',
         todoItem,
         { headers: headers }
       )
@@ -112,10 +112,10 @@ export class TodoService {
     newTodoItem.id = originalTodoItem.id;
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
+//http://localhost:3000/todos/
     // update database
     this.http
-      .put('http://localhost:3000/todos/' + originalTodoItem.id, newTodoItem, {
+      .put('https://todo-list-app-l8kj.onrender.com/todos' + originalTodoItem.id, newTodoItem, {
         headers: headers,
       })
       .subscribe((response: Response) => {
@@ -144,7 +144,7 @@ export class TodoService {
     }
     // delete from database
     this.http
-      .delete('http://localhost:3000/todos/' + todoItem.id)
+      .delete('https://todo-list-app-l8kj.onrender.com/todos' + todoItem.id)
       .subscribe((response: Response) => {
         this.TodoList.splice(pos, 1);
         this.sortAndSend();
