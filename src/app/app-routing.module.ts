@@ -5,16 +5,17 @@ import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
 import { TodoDetailComponent } from './todo/todo-detail/todo-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/todoList', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   {
-    path: 'todoList',
+    path: '',
     component: TodoComponent,
     children: [
       { path: 'new', component: TodoEditComponent },
       { path: ':id', component: TodoDetailComponent },
-      { path: ':id/edit', component: TodoEditComponent },
+      { path: ':id/edit', component: TodoEditComponent }
     ],
   },
+  { path: '**', redirectTo: '/' }
 
 ];
 
