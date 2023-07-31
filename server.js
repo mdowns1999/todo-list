@@ -13,7 +13,7 @@ dotenv.config();
 
 mongoose
 
-  .connect(process.env.MONGODB_URI)
+  .connect("mongodb+srv://mdowns:Km64JrPLuZVXjpXw@cluster0.729um46.mongodb.net/todoDB")
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("Connection failed: " + err));
   
