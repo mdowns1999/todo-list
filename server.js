@@ -11,13 +11,10 @@ var mongoose = require('mongoose');
 const dotenv = require("dotenv");
 dotenv.config();
 
-// establish a connection to the mongo database mongodb://localhost:27017
-//.connect("mongodb://127.0.0.1:27017/todoDB", { useNewUrlParser: true })
 mongoose
-//G8lEu0qcS58bePfl
-//  .connect("mongodb://127.0.0.1:27017/todoDB", { useNewUrlParser: true })
-  // .connect("mongodb+srv://todoUser:G8lEu0qcS58bePfl.729um46.mongodb.net/?retryWrites=true&w=majority")
-  .connect("mongodb+srv://mdowns:Km64JrPLuZVXjpXw@cluster0.729um46.mongodb.net/todoDB")
+
+  .connect(process.env.MONGODB_URI)
+  //.connect("mongodb+srv://mdowns:Km64JrPLuZVXjpXw@cluster0.729um46.mongodb.net/todoDB")
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("Connection failed: " + err));
   
