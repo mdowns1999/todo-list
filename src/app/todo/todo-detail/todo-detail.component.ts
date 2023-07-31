@@ -40,7 +40,7 @@ export class TodoDetailComponent implements OnInit {
    **********************************************************/
   onDelete() {
     this.todoService.deleteTodoItem(this.todo);
-    this.router.navigateByUrl('/todoList');
+    this.router.navigateByUrl('/');
   }
 
   /********************************************************
@@ -65,6 +65,6 @@ export class TodoDetailComponent implements OnInit {
 
     this.todoService.updateTodoitem(this.todo, newItem);
 
-    this.router.navigate(['/todoList']);
+    this.router.navigate(['/']);
   }
 }

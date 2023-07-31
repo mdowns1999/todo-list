@@ -77,6 +77,6 @@ export class TodoEditComponent implements OnInit {
       this.todoService.addTodoItem(newItem);
     }
 
-    this.router.navigate(['/todoList']);
+    this.router.navigate(['/']);
   }
 }

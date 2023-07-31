@@ -51,7 +51,7 @@ export class TodoService {
         }
       );
 
-    return this.TodoList.slice();
+    return this.TodoList;
   }
 
   /********************************************************
@@ -177,5 +177,6 @@ export class TodoService {
    **********************************************************/
   sortAndSend() {
     this.todoListChangedEvent.next(this.TodoList.slice());
+    console.log("UPDATE LSIT")
   }
 }
